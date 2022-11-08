@@ -57,11 +57,18 @@ return [
                     'class' => app\components\authclient\clients\ZaloService::class,
                     'appId' => env("ZALO_APP_ID"),
                     'secretKey' => env("ZALO_Secret_Key"),
-                    'returnUrl' => "https://e9f5-115-78-4-37.ap.ngrok.io/zalo/request-permission?authclient=zalo",
-                    'validateAuthState' => false
+                    'returnUrl' => "https://5eca-2402-800-63e0-460e-88b5-d8de-cb27-f10e.ngrok.io/zalo/request-permission?authclient=zalo",
+                    'validateAuthState' => false,
+                    'tableAccessToken' => 'service_oauth'
                 ]
             ],
         ],
+        'zalo' => [
+            'class' => app\components\zalo\ZaloComponent::class,
+            'authClientId' => 'authClientCollection',
+            'zaloId' => 'zalo',
+            'tableAccessToken' => 'service_oauth'
+        ]
     ],
     'params' => $params,
 ];
